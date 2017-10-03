@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		478633B31F70F5F300AB736B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 478633B21F70F5F300AB736B /* main.m */; };
 		478633B61F70F5F300AB736B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 478633B51F70F5F300AB736B /* AppDelegate.m */; };
-		478633B91F70F5F300AB736B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478633B81F70F5F300AB736B /* ViewController.m */; };
 		478633BC1F70F5F300AB736B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478633BA1F70F5F300AB736B /* Main.storyboard */; };
 		478633BE1F70F5F300AB736B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 478633BD1F70F5F300AB736B /* Assets.xcassets */; };
 		478633C11F70F5F300AB736B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478633BF1F70F5F300AB736B /* LaunchScreen.storyboard */; };
@@ -20,8 +19,6 @@
 		478633B21F70F5F300AB736B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		478633B41F70F5F300AB736B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		478633B51F70F5F300AB736B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		478633B71F70F5F300AB736B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		478633B81F70F5F300AB736B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		478633BB1F70F5F300AB736B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		478633BD1F70F5F300AB736B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		478633C01F70F5F300AB736B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,8 +57,6 @@
 			children = (
 				478633B41F70F5F300AB736B /* AppDelegate.h */,
 				478633B51F70F5F300AB736B /* AppDelegate.m */,
-				478633B71F70F5F300AB736B /* ViewController.h */,
-				478633B81F70F5F300AB736B /* ViewController.m */,
 				478633BA1F70F5F300AB736B /* Main.storyboard */,
 				478633BD1F70F5F300AB736B /* Assets.xcassets */,
 				478633BF1F70F5F300AB736B /* LaunchScreen.storyboard */,
@@ -111,7 +106,7 @@
 					478633AD1F70F5F300AB736B = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 6C7QEGP2K7;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -151,7 +146,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				478633B91F70F5F300AB736B /* ViewController.m in Sources */,
 				478633B61F70F5F300AB736B /* AppDelegate.m in Sources */,
 				478633B31F70F5F300AB736B /* main.m in Sources */,
 			);
@@ -278,8 +272,10 @@
 				DEVELOPMENT_TEAM = 6C7QEGP2K7;
 				INFOPLIST_FILE = D18_Helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jh.D18-Helper";
+				PRODUCT_BUNDLE_IDENTIFIER = com.szse.nmoastg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1f8ef4fa-0521-4087-852c-d261791b4f80";
+				PROVISIONING_PROFILE_SPECIFIER = NMOA_Development;
 			};
 			name = Debug;
 		};
@@ -290,8 +286,10 @@
 				DEVELOPMENT_TEAM = 6C7QEGP2K7;
 				INFOPLIST_FILE = D18_Helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jh.D18-Helper";
+				PRODUCT_BUNDLE_IDENTIFIER = com.szse.nmoastg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1f8ef4fa-0521-4087-852c-d261791b4f80";
+				PROVISIONING_PROFILE_SPECIFIER = NMOA_Development;
 			};
 			name = Release;
 		};
@@ -314,6 +312,7 @@
 				478633C71F70F5F300AB736B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
