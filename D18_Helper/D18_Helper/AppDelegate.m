@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "D18_RootViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self transToRootController];
     return YES;
 }
 
@@ -45,6 +47,12 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)transToRootController
+{
+    D18_RootViewController *rootController = [[D18_RootViewController alloc] init];
+    self.window.rootViewController = rootController;
 }
 
 

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4712BB261F84649400B68178 /* D18_RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB251F84649400B68178 /* D18_RootViewController.m */; };
+		4712BB2F1F8499B600B68178 /* D18_BlueToothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB2E1F8499B600B68178 /* D18_BlueToothManager.m */; };
+		4712BB321F8499E500B68178 /* D18_NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB311F8499E500B68178 /* D18_NavigationBar.m */; };
+		4712BB351F849A0400B68178 /* D18_SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB341F849A0400B68178 /* D18_SettingViewController.m */; };
+		4712BB381F849A1E00B68178 /* D18_LinkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB371F849A1E00B68178 /* D18_LinkingViewController.m */; };
+		4712BB3B1F849A3500B68178 /* D18_HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB3A1F849A3500B68178 /* D18_HomePageViewController.m */; };
+		4712BB3E1F849A4A00B68178 /* D18_FMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB3D1F849A4A00B68178 /* D18_FMSettingViewController.m */; };
 		478633B31F70F5F300AB736B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 478633B21F70F5F300AB736B /* main.m */; };
 		478633B61F70F5F300AB736B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 478633B51F70F5F300AB736B /* AppDelegate.m */; };
 		478633BC1F70F5F300AB736B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478633BA1F70F5F300AB736B /* Main.storyboard */; };
@@ -15,6 +22,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4712BB241F84649400B68178 /* D18_RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_RootViewController.h; sourceTree = "<group>"; };
+		4712BB251F84649400B68178 /* D18_RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_RootViewController.m; sourceTree = "<group>"; };
+		4712BB2D1F8499B600B68178 /* D18_BlueToothManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_BlueToothManager.h; sourceTree = "<group>"; };
+		4712BB2E1F8499B600B68178 /* D18_BlueToothManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_BlueToothManager.m; sourceTree = "<group>"; };
+		4712BB301F8499E500B68178 /* D18_NavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_NavigationBar.h; sourceTree = "<group>"; };
+		4712BB311F8499E500B68178 /* D18_NavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_NavigationBar.m; sourceTree = "<group>"; };
+		4712BB331F849A0400B68178 /* D18_SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_SettingViewController.h; sourceTree = "<group>"; };
+		4712BB341F849A0400B68178 /* D18_SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_SettingViewController.m; sourceTree = "<group>"; };
+		4712BB361F849A1E00B68178 /* D18_LinkingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_LinkingViewController.h; sourceTree = "<group>"; };
+		4712BB371F849A1E00B68178 /* D18_LinkingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_LinkingViewController.m; sourceTree = "<group>"; };
+		4712BB391F849A3500B68178 /* D18_HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_HomePageViewController.h; sourceTree = "<group>"; };
+		4712BB3A1F849A3500B68178 /* D18_HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_HomePageViewController.m; sourceTree = "<group>"; };
+		4712BB3C1F849A4A00B68178 /* D18_FMSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_FMSettingViewController.h; sourceTree = "<group>"; };
+		4712BB3D1F849A4A00B68178 /* D18_FMSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_FMSettingViewController.m; sourceTree = "<group>"; };
 		478633AE1F70F5F300AB736B /* D18_Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D18_Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		478633B21F70F5F300AB736B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		478633B41F70F5F300AB736B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -36,6 +57,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4712BB271F8498EB00B68178 /* FMSetting */ = {
+			isa = PBXGroup;
+			children = (
+				4712BB3C1F849A4A00B68178 /* D18_FMSettingViewController.h */,
+				4712BB3D1F849A4A00B68178 /* D18_FMSettingViewController.m */,
+			);
+			path = FMSetting;
+			sourceTree = "<group>";
+		};
+		4712BB281F8498FB00B68178 /* homepage */ = {
+			isa = PBXGroup;
+			children = (
+				4712BB391F849A3500B68178 /* D18_HomePageViewController.h */,
+				4712BB3A1F849A3500B68178 /* D18_HomePageViewController.m */,
+			);
+			path = homepage;
+			sourceTree = "<group>";
+		};
+		4712BB291F84990600B68178 /* linking */ = {
+			isa = PBXGroup;
+			children = (
+				4712BB361F849A1E00B68178 /* D18_LinkingViewController.h */,
+				4712BB371F849A1E00B68178 /* D18_LinkingViewController.m */,
+			);
+			path = linking;
+			sourceTree = "<group>";
+		};
+		4712BB2A1F84991300B68178 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				4712BB331F849A0400B68178 /* D18_SettingViewController.h */,
+				4712BB341F849A0400B68178 /* D18_SettingViewController.m */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
+		4712BB2B1F84994D00B68178 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				4712BB301F8499E500B68178 /* D18_NavigationBar.h */,
+				4712BB311F8499E500B68178 /* D18_NavigationBar.m */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		4712BB2C1F84998C00B68178 /* bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				4712BB2D1F8499B600B68178 /* D18_BlueToothManager.h */,
+				4712BB2E1F8499B600B68178 /* D18_BlueToothManager.m */,
+			);
+			path = bluetooth;
+			sourceTree = "<group>";
+		};
 		478633A51F70F5F300AB736B = {
 			isa = PBXGroup;
 			children = (
@@ -55,8 +130,16 @@
 		478633B01F70F5F300AB736B /* D18_Helper */ = {
 			isa = PBXGroup;
 			children = (
+				4712BB2C1F84998C00B68178 /* bluetooth */,
+				4712BB2B1F84994D00B68178 /* tools */,
+				4712BB2A1F84991300B68178 /* setting */,
+				4712BB291F84990600B68178 /* linking */,
+				4712BB281F8498FB00B68178 /* homepage */,
+				4712BB271F8498EB00B68178 /* FMSetting */,
 				478633B41F70F5F300AB736B /* AppDelegate.h */,
 				478633B51F70F5F300AB736B /* AppDelegate.m */,
+				4712BB241F84649400B68178 /* D18_RootViewController.h */,
+				4712BB251F84649400B68178 /* D18_RootViewController.m */,
 				478633BA1F70F5F300AB736B /* Main.storyboard */,
 				478633BD1F70F5F300AB736B /* Assets.xcassets */,
 				478633BF1F70F5F300AB736B /* LaunchScreen.storyboard */,
@@ -100,6 +183,7 @@
 		478633A61F70F5F300AB736B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = D18_;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = com.JH.TD;
 				TargetAttributes = {
@@ -146,8 +230,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4712BB3B1F849A3500B68178 /* D18_HomePageViewController.m in Sources */,
 				478633B61F70F5F300AB736B /* AppDelegate.m in Sources */,
+				4712BB321F8499E500B68178 /* D18_NavigationBar.m in Sources */,
 				478633B31F70F5F300AB736B /* main.m in Sources */,
+				4712BB2F1F8499B600B68178 /* D18_BlueToothManager.m in Sources */,
+				4712BB261F84649400B68178 /* D18_RootViewController.m in Sources */,
+				4712BB351F849A0400B68178 /* D18_SettingViewController.m in Sources */,
+				4712BB3E1F849A4A00B68178 /* D18_FMSettingViewController.m in Sources */,
+				4712BB381F849A1E00B68178 /* D18_LinkingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
