@@ -1,0 +1,15 @@
+//
+//  PrefixHeader.pch
+//  D18_Helper
+//
+//  Created by azz on 2017/10/5.
+//  Copyright © 2017年 com.JH.TD. All rights reserved.
+//
+
+
+#ifdef __OBJC__
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

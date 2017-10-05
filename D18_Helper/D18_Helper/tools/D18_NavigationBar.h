@@ -10,4 +10,8 @@
 
 @interface D18_NavigationBar : UIView
 
+- (instancetype)initWithTitle:(NSString *)title isShowBackButton:(BOOL)showBackButton;
+
+- (instancetype)initWithTitle:(NSString *)title leftButtonImageName:(NSString *)leftImageName rightButtonImageName:(NSString *)rightImageName;
+
 @end
