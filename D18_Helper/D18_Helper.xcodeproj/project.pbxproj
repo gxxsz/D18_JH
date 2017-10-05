@@ -36,6 +36,28 @@
 		4712BB3A1F849A3500B68178 /* D18_HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_HomePageViewController.m; sourceTree = "<group>"; };
 		4712BB3C1F849A4A00B68178 /* D18_FMSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_FMSettingViewController.h; sourceTree = "<group>"; };
 		4712BB3D1F849A4A00B68178 /* D18_FMSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_FMSettingViewController.m; sourceTree = "<group>"; };
+		4712BB401F86567500B68178 /* BabyBluetooth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabyBluetooth.h; sourceTree = "<group>"; };
+		4712BB411F86567500B68178 /* BabyBluetooth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabyBluetooth.m; sourceTree = "<group>"; };
+		4712BB421F86567500B68178 /* BabyCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabyCallback.h; sourceTree = "<group>"; };
+		4712BB431F86567500B68178 /* BabyCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabyCallback.m; sourceTree = "<group>"; };
+		4712BB441F86567500B68178 /* BabyCentralManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabyCentralManager.h; sourceTree = "<group>"; };
+		4712BB451F86567500B68178 /* BabyCentralManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabyCentralManager.m; sourceTree = "<group>"; };
+		4712BB461F86567500B68178 /* BabyDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabyDefine.h; sourceTree = "<group>"; };
+		4712BB471F86567500B68178 /* BabyDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabyDefine.m; sourceTree = "<group>"; };
+		4712BB481F86567500B68178 /* BabyOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabyOptions.h; sourceTree = "<group>"; };
+		4712BB491F86567500B68178 /* BabyOptions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabyOptions.m; sourceTree = "<group>"; };
+		4712BB4A1F86567500B68178 /* BabyPeripheralManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabyPeripheralManager.h; sourceTree = "<group>"; };
+		4712BB4B1F86567500B68178 /* BabyPeripheralManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabyPeripheralManager.m; sourceTree = "<group>"; };
+		4712BB4C1F86567500B68178 /* BabyRhythm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabyRhythm.h; sourceTree = "<group>"; };
+		4712BB4D1F86567500B68178 /* BabyRhythm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabyRhythm.m; sourceTree = "<group>"; };
+		4712BB4E1F86567500B68178 /* BabySpeaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabySpeaker.h; sourceTree = "<group>"; };
+		4712BB4F1F86567500B68178 /* BabySpeaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabySpeaker.m; sourceTree = "<group>"; };
+		4712BB501F86567500B68178 /* BabyToy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabyToy.h; sourceTree = "<group>"; };
+		4712BB511F86567500B68178 /* BabyToy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabyToy.m; sourceTree = "<group>"; };
+		4712BB531F86568000B68178 /* BluetoothManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothManager.h; sourceTree = "<group>"; };
+		4712BB541F86568000B68178 /* BluetoothManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BluetoothManager.m; sourceTree = "<group>"; };
+		4712BB551F86568000B68178 /* BluetoothOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothOperation.h; sourceTree = "<group>"; };
+		4712BB561F86568000B68178 /* BluetoothOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BluetoothOperation.m; sourceTree = "<group>"; };
 		478633AE1F70F5F300AB736B /* D18_Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D18_Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		478633B21F70F5F300AB736B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		478633B41F70F5F300AB736B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +133,42 @@
 			path = bluetooth;
 			sourceTree = "<group>";
 		};
+		4712BB3F1F86567500B68178 /* BabyBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				4712BB401F86567500B68178 /* BabyBluetooth.h */,
+				4712BB411F86567500B68178 /* BabyBluetooth.m */,
+				4712BB421F86567500B68178 /* BabyCallback.h */,
+				4712BB431F86567500B68178 /* BabyCallback.m */,
+				4712BB441F86567500B68178 /* BabyCentralManager.h */,
+				4712BB451F86567500B68178 /* BabyCentralManager.m */,
+				4712BB461F86567500B68178 /* BabyDefine.h */,
+				4712BB471F86567500B68178 /* BabyDefine.m */,
+				4712BB481F86567500B68178 /* BabyOptions.h */,
+				4712BB491F86567500B68178 /* BabyOptions.m */,
+				4712BB4A1F86567500B68178 /* BabyPeripheralManager.h */,
+				4712BB4B1F86567500B68178 /* BabyPeripheralManager.m */,
+				4712BB4C1F86567500B68178 /* BabyRhythm.h */,
+				4712BB4D1F86567500B68178 /* BabyRhythm.m */,
+				4712BB4E1F86567500B68178 /* BabySpeaker.h */,
+				4712BB4F1F86567500B68178 /* BabySpeaker.m */,
+				4712BB501F86567500B68178 /* BabyToy.h */,
+				4712BB511F86567500B68178 /* BabyToy.m */,
+			);
+			path = BabyBluetooth;
+			sourceTree = "<group>";
+		};
+		4712BB521F86568000B68178 /* BluetoothManager */ = {
+			isa = PBXGroup;
+			children = (
+				4712BB531F86568000B68178 /* BluetoothManager.h */,
+				4712BB541F86568000B68178 /* BluetoothManager.m */,
+				4712BB551F86568000B68178 /* BluetoothOperation.h */,
+				4712BB561F86568000B68178 /* BluetoothOperation.m */,
+			);
+			path = BluetoothManager;
+			sourceTree = "<group>";
+		};
 		478633A51F70F5F300AB736B = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +188,8 @@
 		478633B01F70F5F300AB736B /* D18_Helper */ = {
 			isa = PBXGroup;
 			children = (
+				4712BB521F86568000B68178 /* BluetoothManager */,
+				4712BB3F1F86567500B68178 /* BabyBluetooth */,
 				4712BB2C1F84998C00B68178 /* bluetooth */,
 				4712BB2B1F84994D00B68178 /* tools */,
 				4712BB2A1F84991300B68178 /* setting */,
