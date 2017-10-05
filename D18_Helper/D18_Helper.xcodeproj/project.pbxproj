@@ -14,6 +14,7 @@
 		4712BB381F849A1E00B68178 /* D18_LinkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB371F849A1E00B68178 /* D18_LinkingViewController.m */; };
 		4712BB3B1F849A3500B68178 /* D18_HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB3A1F849A3500B68178 /* D18_HomePageViewController.m */; };
 		4712BB3E1F849A4A00B68178 /* D18_FMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB3D1F849A4A00B68178 /* D18_FMSettingViewController.m */; };
+		4712BB621F865E6500B68178 /* GlobalDefinition.h in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB591F865D7700B68178 /* GlobalDefinition.h */; };
 		478633B31F70F5F300AB736B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 478633B21F70F5F300AB736B /* main.m */; };
 		478633B61F70F5F300AB736B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 478633B51F70F5F300AB736B /* AppDelegate.m */; };
 		478633BC1F70F5F300AB736B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478633BA1F70F5F300AB736B /* Main.storyboard */; };
@@ -59,6 +60,15 @@
 		4712BB551F86568000B68178 /* BluetoothOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothOperation.h; sourceTree = "<group>"; };
 		4712BB561F86568000B68178 /* BluetoothOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BluetoothOperation.m; sourceTree = "<group>"; };
 		4712BB571F865BE200B68178 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		4712BB591F865D7700B68178 /* GlobalDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefinition.h; sourceTree = "<group>"; };
+		4712BB5A1F865D7700B68178 /* MBProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4712BB5B1F865D7700B68178 /* MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		4712BB5C1F865D7700B68178 /* MusicList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MusicList.plist; sourceTree = "<group>"; };
+		4712BB5D1F865D7700B68178 /* NullSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
+		4712BB5E1F865D7700B68178 /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		4712BB5F1F865D7700B68178 /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		4712BB601F865D7700B68178 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		4712BB611F865D7700B68178 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		478633AE1F70F5F300AB736B /* D18_Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D18_Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		478633B21F70F5F300AB736B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		478633B41F70F5F300AB736B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -170,6 +180,22 @@
 			path = BluetoothManager;
 			sourceTree = "<group>";
 		};
+		4712BB581F865D7700B68178 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				4712BB591F865D7700B68178 /* GlobalDefinition.h */,
+				4712BB5A1F865D7700B68178 /* MBProgressHUD.h */,
+				4712BB5B1F865D7700B68178 /* MBProgressHUD.m */,
+				4712BB5C1F865D7700B68178 /* MusicList.plist */,
+				4712BB5D1F865D7700B68178 /* NullSafe.m */,
+				4712BB5E1F865D7700B68178 /* UIView+Extension.h */,
+				4712BB5F1F865D7700B68178 /* UIView+Extension.m */,
+				4712BB601F865D7700B68178 /* Utils.h */,
+				4712BB611F865D7700B68178 /* Utils.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		478633A51F70F5F300AB736B = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +215,7 @@
 		478633B01F70F5F300AB736B /* D18_Helper */ = {
 			isa = PBXGroup;
 			children = (
+				4712BB581F865D7700B68178 /* Other */,
 				4712BB521F86568000B68178 /* BluetoothManager */,
 				4712BB3F1F86567500B68178 /* BabyBluetooth */,
 				4712BB2C1F84998C00B68178 /* bluetooth */,
@@ -292,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4712BB621F865E6500B68178 /* GlobalDefinition.h in Sources */,
 				4712BB3B1F849A3500B68178 /* D18_HomePageViewController.m in Sources */,
 				478633B61F70F5F300AB736B /* AppDelegate.m in Sources */,
 				4712BB321F8499E500B68178 /* D18_NavigationBar.m in Sources */,
