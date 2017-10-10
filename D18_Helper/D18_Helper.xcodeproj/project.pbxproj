@@ -20,6 +20,9 @@
 		478633BC1F70F5F300AB736B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478633BA1F70F5F300AB736B /* Main.storyboard */; };
 		478633BE1F70F5F300AB736B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 478633BD1F70F5F300AB736B /* Assets.xcassets */; };
 		478633C11F70F5F300AB736B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478633BF1F70F5F300AB736B /* LaunchScreen.storyboard */; };
+		47FF38F21F8CD70F000B531E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FF38F11F8CD70E000B531E /* Foundation.framework */; };
+		47FF38F41F8CD716000B531E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FF38F31F8CD716000B531E /* CoreFoundation.framework */; };
+		47FF38F61F8CD71E000B531E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FF38F51F8CD71E000B531E /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +80,9 @@
 		478633BD1F70F5F300AB736B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		478633C01F70F5F300AB736B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		478633C21F70F5F300AB736B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47FF38F11F8CD70E000B531E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		47FF38F31F8CD716000B531E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		47FF38F51F8CD71E000B531E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FF38F61F8CD71E000B531E /* UIKit.framework in Frameworks */,
+				47FF38F41F8CD716000B531E /* CoreFoundation.framework in Frameworks */,
+				47FF38F21F8CD70F000B531E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +210,7 @@
 			children = (
 				478633B01F70F5F300AB736B /* D18_Helper */,
 				478633AF1F70F5F300AB736B /* Products */,
+				47FF38F01F8CD70E000B531E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +254,16 @@
 				478633B21F70F5F300AB736B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47FF38F01F8CD70E000B531E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47FF38F51F8CD71E000B531E /* UIKit.framework */,
+				47FF38F31F8CD716000B531E /* CoreFoundation.framework */,
+				47FF38F11F8CD70E000B531E /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,9 +396,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Stock Exchange";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Stock Exchange";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 6C7QEGP2K7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -425,9 +447,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Stock Exchange";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Stock Exchange";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6C7QEGP2K7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

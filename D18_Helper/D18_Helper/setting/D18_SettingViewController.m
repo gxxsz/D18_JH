@@ -7,8 +7,9 @@
 //
 
 #import "D18_SettingViewController.h"
+#import "D18_NavigationBar.h"
 
-@interface D18_SettingViewController ()
+@interface D18_SettingViewController ()<D18_NavigationBarDelegate>
 
 @end
 
@@ -17,11 +18,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.view.backgroundColor = [Utils stringTOColor:@"#0d0d0d"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)backBtnClick
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

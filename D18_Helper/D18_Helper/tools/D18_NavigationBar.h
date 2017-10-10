@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol D18_NavigationBarDelegate  <NSObject>
+
+@optional
+- (void)backBtnClick;
+
+- (void)rightBtnClick;
+
+@end
+
 @interface D18_NavigationBar : UIView
+
+@property (nonatomic , weak) id<D18_NavigationBarDelegate> barViewDelegate;
 
 - (instancetype)initWithTitle:(NSString *)title isShowBackButton:(BOOL)showBackButton;
 

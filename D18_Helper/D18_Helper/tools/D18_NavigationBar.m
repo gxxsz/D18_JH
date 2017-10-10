@@ -46,7 +46,7 @@
 
 - (instancetype)initWithTitle:(NSString *)title leftButtonImageName:(NSString *)leftImageName rightButtonImageName:(NSString *)rightImageName
 {
-    CGRect frmae = CGRectMake(0, 0, 375, 44);
+    CGRect frmae = CGRectMake(0, 0, kScreenWidth, 44);
     self = [super initWithFrame:frmae];
     if (self) {
         _leftImageName = leftImageName;
@@ -59,16 +59,60 @@
 
 - (void)setUpUI
 {
-    _leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    self.backgroundColor = [Utils stringTOColor:@"#141414"];
+    if (_showBackBtn) {
+        _leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 0, 44, 44)];
+        [_leftBtn addTarget:self action:@selector(leftBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        if (_leftImageName && _leftImageName.length > 0) {
+            [_leftBtn setImage:[UIImage imageNamed:_leftImageName] forState:UIControlStateNormal];
+            
+        }else{
+            [_leftBtn setImage:[UIImage imageNamed:@"back_Normal"] forState:UIControlStateNormal];
+            [_leftBtn setImage:[UIImage imageNamed:@"back_HighLighted"] forState:UIControlStateHighlighted];
+        }
+        [self addSubview:_leftBtn];
+    }
     
+    if (_rightImageName && _rightImageName.length > 0) {
+        _rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - 60, 0, 44, 44)];
+        [_rightBtn addTarget:self action:@selector(rightClick) forControlEvents:UIControlEventTouchUpInside];
+        [_rightBtn setImage:[UIImage imageNamed:_rightImageName] forState:UIControlStateNormal];
+        [self addSubview:_rightBtn];
+    }
+    if (_title && _title.length > 0) {
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, kScreenWidth - 120, 44)];
+        _titleLabel.font = [UIFont systemFontOfSize:17];
+        _titleLabel.textColor = [Utils stringTOColor:@"#ffffff"];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.centerX = self.centerX;
+        _titleLabel.text = _title;
+        [self addSubview:_titleLabel];
+    }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+- (void)leftBtnClick
+{
+    if (self.barViewDelegate && [self.barViewDelegate respondsToSelector:@selector(backBtnClick)]) {
+        [self.barViewDelegate backBtnClick];
+    }
 }
-*/
+
+- (void)rightClick
+{
+    if (self.barViewDelegate && [self.barViewDelegate respondsToSelector:@selector(rightBtnClick)]) {
+        [self.barViewDelegate rightBtnClick];
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 @end
