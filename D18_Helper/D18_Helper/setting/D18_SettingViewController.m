@@ -44,6 +44,12 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 - (void)setUpConnectView
 {
     _connectView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, kScreenWidth, 200)];
@@ -165,6 +171,74 @@
     
     CGFloat modelBtnH = 112;
     CGFloat modelBtnW = kScreenWidth * 0.5;
+    CGFloat modelBtnY = CGRectGetMaxY(programLabel.frame) + 6;
+    
+    UIButton *normalBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, modelBtnY, modelBtnW, modelBtnH)];
+    [normalBtn setImage:[UIImage imageNamed:@"default_Normal"] forState:UIControlStateNormal];
+    [normalBtn setImage:[UIImage imageNamed:@"default_selected"] forState:UIControlStateHighlighted];
+    [normalBtn setTitle:@"Normal" forState:UIControlStateNormal];
+    [normalBtn setTitleColor:[Utils stringTOColor:@"#ffffff"] forState:UIControlStateNormal];
+    [normalBtn setTitle:@"Normal" forState:UIControlStateHighlighted];
+    [normalBtn setTitleColor:[Utils stringTOColor:@"#5cb8c4"] forState:UIControlStateHighlighted];
+    [normalBtn addTarget:self action:@selector(normalBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_programView addSubview:normalBtn];
+    
+    UIButton *noiseBtn = [[UIButton alloc] initWithFrame:CGRectMake(modelBtnW, modelBtnY, modelBtnW, modelBtnH)];
+    [noiseBtn setImage:[UIImage imageNamed:@"noise_normal"] forState:UIControlStateNormal];
+    [noiseBtn setImage:[UIImage imageNamed:@"noise_selected"] forState:UIControlStateHighlighted];
+    [noiseBtn setTitle:@"Noise Reduction" forState:UIControlStateNormal];
+    [noiseBtn setTitleColor:[Utils stringTOColor:@"#ffffff"] forState:UIControlStateNormal];
+    [noiseBtn setTitle:@"Noise Reduction" forState:UIControlStateHighlighted];
+    [noiseBtn setTitleColor:[Utils stringTOColor:@"#5cb8c4"] forState:UIControlStateHighlighted];
+    [noiseBtn addTarget:self action:@selector(noiseBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_programView addSubview:noiseBtn];
+    
+    UIButton *outdoorsBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, modelBtnY + modelBtnH, modelBtnW, modelBtnH)];
+    [outdoorsBtn setImage:[UIImage imageNamed:@"outside_Normal"] forState:UIControlStateNormal];
+    [outdoorsBtn setImage:[UIImage imageNamed:@"outside_Selected"] forState:UIControlStateHighlighted];
+    [outdoorsBtn setTitle:@"Outdoors" forState:UIControlStateNormal];
+    [outdoorsBtn setTitleColor:[Utils stringTOColor:@"#ffffff"] forState:UIControlStateNormal];
+    [outdoorsBtn setTitle:@"Outdoors" forState:UIControlStateHighlighted];
+    [outdoorsBtn setTitleColor:[Utils stringTOColor:@"#5cb8c4"] forState:UIControlStateHighlighted];
+    [outdoorsBtn addTarget:self action:@selector(outdoorsBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_programView addSubview:outdoorsBtn];
+    
+    UIButton *tinitusBtn = [[UIButton alloc] initWithFrame:CGRectMake(modelBtnW, modelBtnY+modelBtnH, modelBtnW, modelBtnH)];
+    [tinitusBtn setImage:[UIImage imageNamed:@"tinitus_normal"] forState:UIControlStateNormal];
+    [tinitusBtn setImage:[UIImage imageNamed:@"tinitus_selected"] forState:UIControlStateHighlighted];
+    [tinitusBtn setTitle:@"Tinitus Treatment" forState:UIControlStateNormal];
+    [tinitusBtn setTitleColor:[Utils stringTOColor:@"#ffffff"] forState:UIControlStateNormal];
+    [tinitusBtn setTitle:@"Tinitus Treatment" forState:UIControlStateHighlighted];
+    [tinitusBtn setTitleColor:[Utils stringTOColor:@"#5cb8c4"] forState:UIControlStateHighlighted];
+    [tinitusBtn addTarget:self action:@selector(tinitusBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_programView addSubview:tinitusBtn];
+    
+    CGFloat lineY = CGRectGetMaxY(tinitusBtn.frame)+10;
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, lineY, kScreenWidth, 0.5)];
+    line.backgroundColor = [Utils stringTOColor:@"#333333"];
+    [_programView addSubview:line];
+    
+    CGFloat otherLineY = CGRectGetMaxY(line.frame)+45;
+    UIView *otherLine = [[UIView alloc] initWithFrame:CGRectMake(0, otherLineY, kScreenWidth, 0.5)];
+    otherLine.backgroundColor = [Utils stringTOColor:@"#333333"];
+    [_programView addSubview:line];
+    
+    CGFloat helpLabelY = otherLineY - 45;
+    UILabel *helpLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, helpLabelY, kScreenWidth - 70, 44)];
+    helpLabel.text = @"Help";
+    helpLabel.font = [UIFont systemFontOfSize:17];
+    helpLabel.textColor = [Utils stringTOColor:@"#ffffff"];
+    [_programView addSubview:helpLabel];
+    
+    CGFloat arrowX = kScreenWidth - 60;
+    UIImageView *arrowView = [[UIImageView alloc] initWithFrame:CGRectMake(arrowX, helpLabelY, 44, 44)];
+    arrowView.image = [UIImage imageNamed:@"rightArrow_Normal"];
+    arrowView.contentMode = UIViewContentModeCenter;
+    [_programView addSubview:arrowView];
     
 }
 
@@ -176,9 +250,28 @@
     return line;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//普通模式点击
+- (void)normalBtnClick
+{
+    
+}
+
+//降噪模式点击
+- (void)noiseBtnClick
+{
+    
+}
+
+//户外模式点击
+- (void)outdoorsBtnClick
+{
+    
+}
+
+//耳鸣治疗模式点击
+- (void)tinitusBtnClick
+{
+    
 }
 
 - (void)backBtnClick

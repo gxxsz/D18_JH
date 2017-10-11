@@ -7,8 +7,10 @@
 //
 
 #import "D18_HomePageViewController.h"
+#import "D18_SettingViewController.h"
+#import "D18_FMSettingViewController.h"
 
-@interface D18_HomePageViewController ()
+@interface D18_HomePageViewController ()<D18_NavigationBarDelegate>
 
 @end
 
@@ -17,6 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.view.backgroundColor = [Utils stringTOColor:@"#0d0d0d"];
+    D18_NavigationBar *barView = [[D18_NavigationBar alloc] initWithTitle:@"Demo" leftButtonImageName:@"setting_Normal" rightButtonImageName:@"FM_Normal"];
+    barView.barViewDelegate = self;
+    [self.view addSubview:barView];
+}
+
+- (void)backBtnClick
+{
+    D18_SettingViewController *settingCtl = [[D18_SettingViewController alloc] init];
+    
+    [self.navigationController pushViewController:settingCtl animated:YES];
+}
+
+- (void)rightBtnClick
+{
+    D18_FMSettingViewController *FMSettingCtl = [[D18_FMSettingViewController alloc] init];
+    
+    [self.navigationController pushViewController:FMSettingCtl animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

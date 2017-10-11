@@ -8,7 +8,11 @@
 
 #import "D18_FMSettingViewController.h"
 
-@interface D18_FMSettingViewController ()
+@interface D18_FMSettingViewController ()<D18_NavigationBarDelegate>
+
+@property (nonatomic , strong) UIView *leftFMView;
+
+@property (nonatomic , strong) UIView *rightFMView;
 
 @end
 
@@ -17,6 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.view.backgroundColor = [Utils stringTOColor:@"#0d0d0d"];
+    D18_NavigationBar *barView = [[D18_NavigationBar alloc] initWithTitle:@"FM" isShowBackButton:YES];
+    barView.barViewDelegate = self;
+    [self.view addSubview:barView];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)backBtnClick
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
