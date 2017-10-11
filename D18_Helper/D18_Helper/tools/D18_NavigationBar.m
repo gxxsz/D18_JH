@@ -46,9 +46,11 @@
 
 - (instancetype)initWithTitle:(NSString *)title leftButtonImageName:(NSString *)leftImageName rightButtonImageName:(NSString *)rightImageName
 {
-    CGRect frmae = CGRectMake(0, 0, kScreenWidth, 44);
+    CGRect frmae = CGRectMake(0, 0, kScreenWidth, 64);
     self = [super initWithFrame:frmae];
     if (self) {
+        _title = title;
+        _showBackBtn = YES;
         _leftImageName = leftImageName;
         _rightImageName = rightImageName;
         
@@ -61,7 +63,7 @@
 {
     self.backgroundColor = [Utils stringTOColor:@"#141414"];
     if (_showBackBtn) {
-        _leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 0, 44, 44)];
+        _leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 44, 44)];
         [_leftBtn addTarget:self action:@selector(leftBtnClick) forControlEvents:UIControlEventTouchUpInside];
         if (_leftImageName && _leftImageName.length > 0) {
             [_leftBtn setImage:[UIImage imageNamed:_leftImageName] forState:UIControlStateNormal];
@@ -74,13 +76,13 @@
     }
     
     if (_rightImageName && _rightImageName.length > 0) {
-        _rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - 60, 0, 44, 44)];
+        _rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - 60, 20, 44, 44)];
         [_rightBtn addTarget:self action:@selector(rightClick) forControlEvents:UIControlEventTouchUpInside];
         [_rightBtn setImage:[UIImage imageNamed:_rightImageName] forState:UIControlStateNormal];
         [self addSubview:_rightBtn];
     }
     if (_title && _title.length > 0) {
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, kScreenWidth - 120, 44)];
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 20, kScreenWidth - 120, 44)];
         _titleLabel.font = [UIFont systemFontOfSize:17];
         _titleLabel.textColor = [Utils stringTOColor:@"#ffffff"];
         _titleLabel.textAlignment = NSTextAlignmentCenter;

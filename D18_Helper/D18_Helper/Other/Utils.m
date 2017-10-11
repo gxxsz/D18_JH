@@ -7,6 +7,8 @@
 //
 
 #import "Utils.h"
+#import "D18_ProgramModel.h"
+
 
 @implementation Utils
 
@@ -241,6 +243,51 @@
         
     }
     return str;
+}
+
++ (NSMutableArray *)getProgramArray
+{
+    NSMutableArray *array = [NSMutableArray array];
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSData *data = [userDefault objectForKey:@"KeyForPrograms"];
+    NSArray *programs = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    if (programs && programs.count > 0) {
+        for (NSInteger i = 0; i < programs.count; i++) {
+            NSDictionary *dict = programs[i];
+            D18_ProgramModel *model = [[D18_ProgramModel alloc] initWithDict:dict];
+            [array addObject:model];
+        }
+        return array;
+    }
+    else{
+        D18_ProgramModel *model1 = [[D18_ProgramModel alloc] initWithModelName:@"Normal" normalImageName:@"default_Normal" selectedImageName:@"default_selected" isSelected:YES];
+        D18_ProgramModel *model2 = [[D18_ProgramModel alloc] initWithModelName:@"Noise Reduction" normalImageName:@"noise_normal" selectedImageName:@"noise_selected" isSelected:NO];
+        D18_ProgramModel *model3 = [[D18_ProgramModel alloc] initWithModelName:@"Outdoor" normalImageName:@"outside_Normal" selectedImageName:@"outside_Selected" isSelected:NO];
+        D18_ProgramModel *model4 = [[D18_ProgramModel alloc] initWithModelName:@"Tinitus Treatment" normalImageName:@"tinitus_normal" selectedImageName:@"tinitus_selected" isSelected:NO];
+        [array addObject:model1];
+        [array addObject:model2];
+        [array addObject:model3];
+        [array addObject:model4];
+        [Utils setProgramArray:array];
+        return array;
+    }
+}
+
++ (void)setProgramArray:(NSArray *)programs
+{
+    if (!programs || programs.count == 0) {
+        return;
+    }
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSInteger i = 0; i < programs.count; i++) {
+        D18_ProgramModel *model = programs[i];
+        NSDictionary *dict = @{@"modelName":model.modelName,@"normalImageName":model.normalImageName,@"selectedImageName":model.selectedImageName,@"isSelected":@(model.isSelected)};
+        [array addObject:dict];
+    }
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array];
+    [userDefault setObject:data forKey:@"KeyForPrograms"];
+    [userDefault synchronize];
 }
 
 

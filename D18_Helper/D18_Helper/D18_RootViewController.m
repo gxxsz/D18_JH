@@ -7,6 +7,9 @@
 //
 
 #import "D18_RootViewController.h"
+#import "D18_SettingViewController.h"
+#import "D18_FMSettingViewController.h"
+#import "D18_HomePageViewController.h"
 
 @interface D18_RootViewController ()
 
@@ -18,6 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    D18_HomePageViewController *homePageCtl = [[D18_HomePageViewController alloc] init];
+    [self addChildViewController:homePageCtl];
+    [self.view addSubview:homePageCtl.view];
 }
 
 - (void)didReceiveMemoryWarning {

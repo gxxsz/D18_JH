@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "D18_RootViewController.h"
+#import "D18_HomePageViewController.h"
 
 @interface AppDelegate ()
 
@@ -51,8 +52,12 @@
 
 - (void)transToRootController
 {
-    D18_RootViewController *rootController = [[D18_RootViewController alloc] init];
-    self.window.rootViewController = rootController;
+//    D18_RootViewController *rootController = [[D18_RootViewController alloc] init];
+    
+    D18_HomePageViewController *homePageCtl = [[D18_HomePageViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homePageCtl];
+    nav.navigationBar.hidden = YES;
+    self.window.rootViewController = nav;
 }
 
 

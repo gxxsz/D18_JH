@@ -8,26 +8,23 @@
 
 #import "D18_SettingViewController.h"
 #import "D18_NavigationBar.h"
+#import "D18_ConnectCell.h"
+#import "D18_ProgramCell.h"
 
-@interface D18_SettingViewController ()<D18_NavigationBarDelegate>
+@interface D18_SettingViewController ()<D18_NavigationBarDelegate,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 
-@property (nonatomic , strong) UIView *connectView;
+@property (nonatomic , strong) UITableView *connectTable;
 
-@property (nonatomic , strong) UIView *programView;
+@property (nonatomic , strong) UICollectionView *programCollectionView;
 
-@property (nonatomic , strong) UIButton *firstDeviceStatusBtn;
+@property (nonatomic , strong) UILabel *blueLable;
 
-@property (nonatomic , strong) UIButton *secondDeviceStatusBtn;
-
-@property (nonatomic , strong) UILabel *nameLabelOne;
-
-@property (nonatomic , strong) UILabel *nameLabelTwo;
-
-@property (nonatomic , strong) UILabel *macAddressLabelOne;
-
-@property (nonatomic , strong) UILabel *macAddressLabelTwo;
+@property (nonatomic , strong) NSMutableArray *programs;
 
 @end
+
+static NSString *conncetTableIdentifier = @"conncetTableIdentifier";
+static NSString *programCollectionViewIdentifier = @"programCollectionViewIdentifier";
 
 @implementation D18_SettingViewController
 
@@ -39,8 +36,10 @@
     barView.barViewDelegate = self;
     [self.view addSubview:barView];
     
-    [self setUpConnectView];
-    [self setUpProgramView];
+    _programs = [Utils getProgramArray];
+    
+    [self setUpConnectTableView];
+    [self setUpProgramCollectionView];
     
 }
 
@@ -50,229 +49,129 @@
     self.navigationController.navigationBar.hidden = YES;
 }
 
-- (void)setUpConnectView
+- (void)setUpConnectTableView
 {
-    _connectView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, kScreenWidth, 200)];
-    _connectView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_connectView];
-    UIView *lineOne = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.5)];
-    lineOne.backgroundColor = [Utils stringTOColor:@"#3a3a3a"];
-    [_connectView addSubview:lineOne];
-    
-    CGFloat labelY = 15;
-    UILabel *deviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, labelY, kScreenWidth, 20)];
-    deviceLabel.text = @"Connected Device";
-    deviceLabel.font = [UIFont systemFontOfSize:13];
-    deviceLabel.textColor = [Utils stringTOColor:@"#999999"];
-    [_connectView addSubview:deviceLabel];
-    
-    CGFloat lineTwoY = CGRectGetMaxY(deviceLabel.frame) + 6;
-    UIView *lineTwo = [self creatLineViewWithY:lineTwoY];
-    
-    //第一个设备
-    CGFloat nameLabelOneY = CGRectGetMaxY(lineTwo.frame) + 8;
-    CGFloat nameLabelX = 10;
-    CGFloat nameLabelH = 22;
-    CGFloat nameLabelW = kScreenWidth - 120;
-    _nameLabelOne = [[UILabel alloc] initWithFrame:CGRectMake(nameLabelX, nameLabelOneY, nameLabelW, nameLabelH)];
-    _nameLabelOne.font = [UIFont systemFontOfSize:17];
-    _nameLabelOne.textColor = [Utils stringTOColor:@"#ffffff"];
-    _nameLabelOne.text = @"JINGHAO 1";
-    [_connectView addSubview:_nameLabelOne];
-    
-    CGFloat macAddressLabelY = CGRectGetMaxY(_nameLabelOne.frame);
-    CGFloat macAddressLabelH = 11;
-    _macAddressLabelOne = [[UILabel alloc] initWithFrame:CGRectMake(nameLabelX, macAddressLabelY, nameLabelW, macAddressLabelH)];
-    _macAddressLabelOne.textColor = [Utils stringTOColor:@"#ffffff"];
-    _macAddressLabelOne.font = [UIFont systemFontOfSize:11];
-    _macAddressLabelOne.text = @"mac address";
-    [_connectView addSubview:_macAddressLabelOne];
-    
-    CGFloat statusBtnW = 70;
-    CGFloat statusBtnH = 30;
-    CGFloat statusBtnX = kScreenWidth - 16 - 70;
-    CGFloat statusBtnY = CGRectGetMaxY(lineTwo.frame) + 7;
-    _firstDeviceStatusBtn = [[UIButton alloc] initWithFrame:CGRectMake(statusBtnX, statusBtnY, statusBtnW, statusBtnH)];
-    [_firstDeviceStatusBtn setTitle:@"OFF" forState:UIControlStateNormal];
-    [_firstDeviceStatusBtn setTintColor:[Utils stringTOColor:@"#5cb8c4"]];
-    _firstDeviceStatusBtn.layer.masksToBounds = YES;
-    _firstDeviceStatusBtn.layer.cornerRadius = statusBtnH * 0.5;
-    _firstDeviceStatusBtn.layer.borderWidth = 1;
-    _firstDeviceStatusBtn.layer.borderColor = [Utils stringTOColor:@"#5cb8c4"].CGColor;
-    [_connectView addSubview:_firstDeviceStatusBtn];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, 45)];
+    headerView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:headerView];
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.5)];
+    line.backgroundColor = [Utils stringTOColor:@"#333333"];
+    [headerView addSubview:line];
     
     
     
-    CGFloat lineThreeY = CGRectGetMaxY(lineTwo.frame) + 45;
-    UIView *lineThree = [self creatLineViewWithY:lineThreeY];
+    _connectTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, 44*3) style:UITableViewStylePlain];
+    _connectTable.dataSource = self;
+    _connectTable.delegate = self;
+    _connectTable.backgroundColor = [UIColor clearColor];
+    _connectTable.separatorColor = [Utils stringTOColor:@"#333333"];
+    [_connectTable registerNib:[UINib nibWithNibName:@"D18_ConnectCell" bundle:nil] forCellReuseIdentifier:conncetTableIdentifier];
+    [self.view addSubview:_connectTable];
     
     
-    //第二个设备
-    CGFloat nameLabelTwoY = CGRectGetMaxY(lineThree.frame) + 8;
-    _nameLabelTwo = [[UILabel alloc] initWithFrame:CGRectMake(nameLabelX, nameLabelTwoY, nameLabelW, nameLabelH)];
-    _nameLabelTwo.font = [UIFont systemFontOfSize:17];
-    _nameLabelTwo.textColor = [Utils stringTOColor:@"#ffffff"];
-    _nameLabelTwo.text = @"JINGHAO 2";
-    [_connectView addSubview:_nameLabelTwo];
-    
-    CGFloat macAddressLabel2Y = CGRectGetMaxY(_nameLabelTwo.frame);
-    _macAddressLabelTwo = [[UILabel alloc] initWithFrame:CGRectMake(nameLabelX, macAddressLabel2Y, nameLabelW, macAddressLabelH)];
-    _macAddressLabelTwo.textColor = [Utils stringTOColor:@"#ffffff"];
-    _macAddressLabelTwo.font = [UIFont systemFontOfSize:11];
-    _macAddressLabelTwo.text = @"mac address";
-    [_connectView addSubview:_macAddressLabelTwo];
-    
-    CGFloat statusBtnTwoY = CGRectGetMaxY(lineThree.frame) + 7;
-    _secondDeviceStatusBtn = [[UIButton alloc] initWithFrame:CGRectMake(statusBtnX, statusBtnTwoY, statusBtnW, statusBtnH)];
-    [_secondDeviceStatusBtn setTitle:@"OFF" forState:UIControlStateNormal];
-    [_secondDeviceStatusBtn setTintColor:[Utils stringTOColor:@"#5cb8c4"]];
-    _secondDeviceStatusBtn.layer.masksToBounds = YES;
-    _secondDeviceStatusBtn.layer.cornerRadius = statusBtnH * 0.5;
-    _secondDeviceStatusBtn.layer.borderWidth = 1;
-    _secondDeviceStatusBtn.layer.borderColor = [Utils stringTOColor:@"#5cb8c4"].CGColor;
-    [_connectView addSubview:_secondDeviceStatusBtn];
+    CGFloat blueLabelY = CGRectGetMaxY(_connectTable.frame) + 10;
+    _blueLable = [[UILabel alloc] initWithFrame:CGRectMake(0, blueLabelY, kScreenWidth, 44)];
+    _blueLable.text = @"Bluetooth";
+    _blueLable.textColor = [Utils stringTOColor:@"#5cb8c4"];
+    _blueLable.textAlignment = NSTextAlignmentCenter;
+    _blueLable.font = [UIFont systemFontOfSize:17];
+    [self.view addSubview:_blueLable];
     
     
-    CGFloat lineFourY = CGRectGetMaxY(lineThree.frame) + 45;
-    UIView *lineFour = [self creatLineViewWithY:lineFourY];
-    
-    
-    CGFloat lineFiveY = CGRectGetMaxY(lineFour.frame) + 10;
-    UIView *lineFive = [self creatLineViewWithY:lineFiveY];
-    
-    CGFloat blueLabelY = CGRectGetMaxY(lineFive.frame);
-    UILabel *blueLable = [[UILabel alloc] initWithFrame:CGRectMake(0, blueLabelY, kScreenWidth, 44)];
-    blueLable.text = @"Bluetooth";
-    blueLable.textColor = [Utils stringTOColor:@"#5cb8c4"];
-    blueLable.textAlignment = NSTextAlignmentCenter;
-    blueLable.font = [UIFont systemFontOfSize:17];
-    [_connectView addSubview:blueLable];
-    
-    CGFloat lineSixY = CGRectGetMaxY(lineFive.frame) + 45;
-    UIView *lineSix = [self creatLineViewWithY:lineSixY];
-    
-    CGFloat connectViewH = CGRectGetMaxY(lineSix.frame);
-    _connectView.height = connectViewH;
 }
 
-- (void)setUpProgramView
+- (void)setUpProgramCollectionView
 {
-    CGFloat programViewY = CGRectGetMaxY(_connectView.frame);
-    _programView = [[UIView alloc] initWithFrame:CGRectMake(0, programViewY, kScreenWidth, 200)];
-    _programView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_programView];
-    
-    CGFloat programLabelY = 30;
+    CGFloat programLabelY = CGRectGetMaxY(_blueLable.frame) + 30;
     UILabel *programLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, programLabelY, kScreenWidth - 100, 20)];
     programLabel.text = @"My Program";
     programLabel.font = [UIFont systemFontOfSize:13];
     programLabel.textColor = [Utils stringTOColor:@"#999999"];
-    [_programView addSubview:programLabel];
+    [self.view addSubview:programLabel];
     
-    CGFloat modelBtnH = 112;
-    CGFloat modelBtnW = kScreenWidth * 0.5;
-    CGFloat modelBtnY = CGRectGetMaxY(programLabel.frame) + 6;
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    CGFloat itemH = kScreenWidth < 375 ? 82 : 112;
+    CGFloat itemW = kScreenWidth * 0.5 - 1;
+    layout.itemSize = CGSizeMake(itemW, itemH);
+    layout.minimumLineSpacing = 0.5;
+    layout.minimumInteritemSpacing = 0.5;
     
-    UIButton *normalBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, modelBtnY, modelBtnW, modelBtnH)];
-    [normalBtn setImage:[UIImage imageNamed:@"default_Normal"] forState:UIControlStateNormal];
-    [normalBtn setImage:[UIImage imageNamed:@"default_selected"] forState:UIControlStateHighlighted];
-    [normalBtn setTitle:@"Normal" forState:UIControlStateNormal];
-    [normalBtn setTitleColor:[Utils stringTOColor:@"#ffffff"] forState:UIControlStateNormal];
-    [normalBtn setTitle:@"Normal" forState:UIControlStateHighlighted];
-    [normalBtn setTitleColor:[Utils stringTOColor:@"#5cb8c4"] forState:UIControlStateHighlighted];
-    [normalBtn addTarget:self action:@selector(normalBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    CGFloat collectionY = CGRectGetMaxY(programLabel.frame)+6;
+    _programCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, collectionY, kScreenWidth, itemH*2+1) collectionViewLayout:layout];
+    _programCollectionView.backgroundColor = [UIColor clearColor];
+    [_programCollectionView registerNib:[UINib nibWithNibName:@"D18_ProgramCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:programCollectionViewIdentifier];
     
-    [_programView addSubview:normalBtn];
+    _programCollectionView.scrollEnabled = NO;
+    [self.view addSubview:_programCollectionView];
+    _programCollectionView.delegate = self;
+    _programCollectionView.dataSource = self;
     
-    UIButton *noiseBtn = [[UIButton alloc] initWithFrame:CGRectMake(modelBtnW, modelBtnY, modelBtnW, modelBtnH)];
-    [noiseBtn setImage:[UIImage imageNamed:@"noise_normal"] forState:UIControlStateNormal];
-    [noiseBtn setImage:[UIImage imageNamed:@"noise_selected"] forState:UIControlStateHighlighted];
-    [noiseBtn setTitle:@"Noise Reduction" forState:UIControlStateNormal];
-    [noiseBtn setTitleColor:[Utils stringTOColor:@"#ffffff"] forState:UIControlStateNormal];
-    [noiseBtn setTitle:@"Noise Reduction" forState:UIControlStateHighlighted];
-    [noiseBtn setTitleColor:[Utils stringTOColor:@"#5cb8c4"] forState:UIControlStateHighlighted];
-    [noiseBtn addTarget:self action:@selector(noiseBtnClick) forControlEvents:UIControlEventTouchUpInside];
+
     
-    [_programView addSubview:noiseBtn];
-    
-    UIButton *outdoorsBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, modelBtnY + modelBtnH, modelBtnW, modelBtnH)];
-    [outdoorsBtn setImage:[UIImage imageNamed:@"outside_Normal"] forState:UIControlStateNormal];
-    [outdoorsBtn setImage:[UIImage imageNamed:@"outside_Selected"] forState:UIControlStateHighlighted];
-    [outdoorsBtn setTitle:@"Outdoors" forState:UIControlStateNormal];
-    [outdoorsBtn setTitleColor:[Utils stringTOColor:@"#ffffff"] forState:UIControlStateNormal];
-    [outdoorsBtn setTitle:@"Outdoors" forState:UIControlStateHighlighted];
-    [outdoorsBtn setTitleColor:[Utils stringTOColor:@"#5cb8c4"] forState:UIControlStateHighlighted];
-    [outdoorsBtn addTarget:self action:@selector(outdoorsBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    [_programView addSubview:outdoorsBtn];
-    
-    UIButton *tinitusBtn = [[UIButton alloc] initWithFrame:CGRectMake(modelBtnW, modelBtnY+modelBtnH, modelBtnW, modelBtnH)];
-    [tinitusBtn setImage:[UIImage imageNamed:@"tinitus_normal"] forState:UIControlStateNormal];
-    [tinitusBtn setImage:[UIImage imageNamed:@"tinitus_selected"] forState:UIControlStateHighlighted];
-    [tinitusBtn setTitle:@"Tinitus Treatment" forState:UIControlStateNormal];
-    [tinitusBtn setTitleColor:[Utils stringTOColor:@"#ffffff"] forState:UIControlStateNormal];
-    [tinitusBtn setTitle:@"Tinitus Treatment" forState:UIControlStateHighlighted];
-    [tinitusBtn setTitleColor:[Utils stringTOColor:@"#5cb8c4"] forState:UIControlStateHighlighted];
-    [tinitusBtn addTarget:self action:@selector(tinitusBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    [_programView addSubview:tinitusBtn];
-    
-    CGFloat lineY = CGRectGetMaxY(tinitusBtn.frame)+10;
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, lineY, kScreenWidth, 0.5)];
-    line.backgroundColor = [Utils stringTOColor:@"#333333"];
-    [_programView addSubview:line];
-    
-    CGFloat otherLineY = CGRectGetMaxY(line.frame)+45;
-    UIView *otherLine = [[UIView alloc] initWithFrame:CGRectMake(0, otherLineY, kScreenWidth, 0.5)];
-    otherLine.backgroundColor = [Utils stringTOColor:@"#333333"];
-    [_programView addSubview:line];
-    
-    CGFloat helpLabelY = otherLineY - 45;
+    CGFloat helpLabelY = CGRectGetMaxY(_programCollectionView.frame)+10;
     UILabel *helpLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, helpLabelY, kScreenWidth - 70, 44)];
     helpLabel.text = @"Help";
     helpLabel.font = [UIFont systemFontOfSize:17];
     helpLabel.textColor = [Utils stringTOColor:@"#ffffff"];
-    [_programView addSubview:helpLabel];
+    [self.view addSubview:helpLabel];
     
     CGFloat arrowX = kScreenWidth - 60;
     UIImageView *arrowView = [[UIImageView alloc] initWithFrame:CGRectMake(arrowX, helpLabelY, 44, 44)];
     arrowView.image = [UIImage imageNamed:@"rightArrow_Normal"];
     arrowView.contentMode = UIViewContentModeCenter;
-    [_programView addSubview:arrowView];
+    [self.view addSubview:arrowView];
+}
+
+
+
+#pragma mark - UITableViewDelegate,UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    D18_ConnectCell *cell = [tableView dequeueReusableCellWithIdentifier:conncetTableIdentifier forIndexPath:indexPath];
+    cell.deviceNameLabel.text = @"JINHAO 1";
+    cell.macAddressLabel.text = @"mac address";
+    return cell;
+}
+
+
+#pragma mark - UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return _programs.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    D18_ProgramCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:programCollectionViewIdentifier forIndexPath:indexPath];
+    [cell setModel:_programs[indexPath.item]];
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *tempArray = [NSArray arrayWithArray:_programs];
+    for (NSInteger i = 0; i < tempArray.count; i++) {
+        D18_ProgramCell *tempCell = (D18_ProgramCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        D18_ProgramModel *tempModel = tempArray[i];
+        if (i != indexPath.item) {
+            tempModel.isSelected = NO;
+        }else{
+            tempModel.isSelected = YES;
+        }
+        [tempCell setModel:tempModel];
+        [_programs replaceObjectAtIndex:i withObject:tempModel];
+    }
+    
+    [Utils setProgramArray:_programs];
     
 }
 
-- (UIView *)creatLineViewWithY:(CGFloat)yValue
-{
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, yValue, kScreenWidth, 0.5)];
-    line.backgroundColor = [Utils stringTOColor:@"#333333"];
-    [_connectView addSubview:line];
-    return line;
-}
-
-//普通模式点击
-- (void)normalBtnClick
-{
-    
-}
-
-//降噪模式点击
-- (void)noiseBtnClick
-{
-    
-}
-
-//户外模式点击
-- (void)outdoorsBtnClick
-{
-    
-}
-
-//耳鸣治疗模式点击
-- (void)tinitusBtnClick
-{
-    
-}
 
 - (void)backBtnClick
 {

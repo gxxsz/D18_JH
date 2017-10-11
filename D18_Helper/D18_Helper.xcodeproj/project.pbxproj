@@ -20,6 +20,15 @@
 		478633BC1F70F5F300AB736B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478633BA1F70F5F300AB736B /* Main.storyboard */; };
 		478633BE1F70F5F300AB736B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 478633BD1F70F5F300AB736B /* Assets.xcassets */; };
 		478633C11F70F5F300AB736B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478633BF1F70F5F300AB736B /* LaunchScreen.storyboard */; };
+		47FC516E1F8E1B3D008C5DB9 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB5F1F865D7700B68178 /* UIView+Extension.m */; };
+		47FC516F1F8E1B49008C5DB9 /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB5D1F865D7700B68178 /* NullSafe.m */; };
+		47FC51701F8E1B4C008C5DB9 /* MusicList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4712BB5C1F865D7700B68178 /* MusicList.plist */; };
+		47FC51711F8E1B4F008C5DB9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB5B1F865D7700B68178 /* MBProgressHUD.m */; };
+		47FC51761F8E1EE6008C5DB9 /* D18_ConnectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC51741F8E1EE6008C5DB9 /* D18_ConnectCell.m */; };
+		47FC51771F8E1EE6008C5DB9 /* D18_ConnectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47FC51751F8E1EE6008C5DB9 /* D18_ConnectCell.xib */; };
+		47FC517B1F8E2152008C5DB9 /* D18_ProgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC51791F8E2152008C5DB9 /* D18_ProgramCell.m */; };
+		47FC517C1F8E2152008C5DB9 /* D18_ProgramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47FC517A1F8E2152008C5DB9 /* D18_ProgramCell.xib */; };
+		47FC51801F8E3937008C5DB9 /* D18_ProgramModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC517F1F8E3937008C5DB9 /* D18_ProgramModel.m */; };
 		47FF38F21F8CD70F000B531E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FF38F11F8CD70E000B531E /* Foundation.framework */; };
 		47FF38F41F8CD716000B531E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FF38F31F8CD716000B531E /* CoreFoundation.framework */; };
 		47FF38F61F8CD71E000B531E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FF38F51F8CD71E000B531E /* UIKit.framework */; };
@@ -81,6 +90,14 @@
 		478633BD1F70F5F300AB736B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		478633C01F70F5F300AB736B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		478633C21F70F5F300AB736B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47FC51731F8E1EE6008C5DB9 /* D18_ConnectCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_ConnectCell.h; sourceTree = "<group>"; };
+		47FC51741F8E1EE6008C5DB9 /* D18_ConnectCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_ConnectCell.m; sourceTree = "<group>"; };
+		47FC51751F8E1EE6008C5DB9 /* D18_ConnectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = D18_ConnectCell.xib; sourceTree = "<group>"; };
+		47FC51781F8E2152008C5DB9 /* D18_ProgramCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_ProgramCell.h; sourceTree = "<group>"; };
+		47FC51791F8E2152008C5DB9 /* D18_ProgramCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_ProgramCell.m; sourceTree = "<group>"; };
+		47FC517A1F8E2152008C5DB9 /* D18_ProgramCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = D18_ProgramCell.xib; sourceTree = "<group>"; };
+		47FC517E1F8E3937008C5DB9 /* D18_ProgramModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_ProgramModel.h; sourceTree = "<group>"; };
+		47FC517F1F8E3937008C5DB9 /* D18_ProgramModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_ProgramModel.m; sourceTree = "<group>"; };
 		47FF38F11F8CD70E000B531E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		47FF38F31F8CD716000B531E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		47FF38F51F8CD71E000B531E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -130,6 +147,8 @@
 		4712BB2A1F84991300B68178 /* setting */ = {
 			isa = PBXGroup;
 			children = (
+				47FC517D1F8E3644008C5DB9 /* model */,
+				47FC51721F8E1EB8008C5DB9 /* view */,
 				4712BB331F849A0400B68178 /* D18_SettingViewController.h */,
 				4712BB341F849A0400B68178 /* D18_SettingViewController.m */,
 			);
@@ -257,6 +276,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		47FC51721F8E1EB8008C5DB9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				47FC51731F8E1EE6008C5DB9 /* D18_ConnectCell.h */,
+				47FC51741F8E1EE6008C5DB9 /* D18_ConnectCell.m */,
+				47FC51751F8E1EE6008C5DB9 /* D18_ConnectCell.xib */,
+				47FC51781F8E2152008C5DB9 /* D18_ProgramCell.h */,
+				47FC51791F8E2152008C5DB9 /* D18_ProgramCell.m */,
+				47FC517A1F8E2152008C5DB9 /* D18_ProgramCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		47FC517D1F8E3644008C5DB9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				47FC517E1F8E3937008C5DB9 /* D18_ProgramModel.h */,
+				47FC517F1F8E3937008C5DB9 /* D18_ProgramModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		47FF38F01F8CD70E000B531E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,8 +368,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FC517C1F8E2152008C5DB9 /* D18_ProgramCell.xib in Resources */,
 				478633C11F70F5F300AB736B /* LaunchScreen.storyboard in Resources */,
+				47FC51771F8E1EE6008C5DB9 /* D18_ConnectCell.xib in Resources */,
 				478633BE1F70F5F300AB736B /* Assets.xcassets in Resources */,
+				47FC51701F8E1B4C008C5DB9 /* MusicList.plist in Resources */,
 				478633BC1F70F5F300AB736B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,17 +384,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FC517B1F8E2152008C5DB9 /* D18_ProgramCell.m in Sources */,
+				47FC51801F8E3937008C5DB9 /* D18_ProgramModel.m in Sources */,
 				4712BB621F865E6500B68178 /* GlobalDefinition.h in Sources */,
 				47FF38F71F8CE42B000B531E /* Utils.m in Sources */,
 				4712BB3B1F849A3500B68178 /* D18_HomePageViewController.m in Sources */,
 				478633B61F70F5F300AB736B /* AppDelegate.m in Sources */,
 				4712BB321F8499E500B68178 /* D18_NavigationBar.m in Sources */,
 				478633B31F70F5F300AB736B /* main.m in Sources */,
+				47FC516E1F8E1B3D008C5DB9 /* UIView+Extension.m in Sources */,
 				4712BB2F1F8499B600B68178 /* D18_BlueToothManager.m in Sources */,
+				47FC516F1F8E1B49008C5DB9 /* NullSafe.m in Sources */,
 				4712BB261F84649400B68178 /* D18_RootViewController.m in Sources */,
 				4712BB351F849A0400B68178 /* D18_SettingViewController.m in Sources */,
 				4712BB3E1F849A4A00B68178 /* D18_FMSettingViewController.m in Sources */,
 				4712BB381F849A1E00B68178 /* D18_LinkingViewController.m in Sources */,
+				47FC51711F8E1B4F008C5DB9 /* MBProgressHUD.m in Sources */,
+				47FC51761F8E1EE6008C5DB9 /* D18_ConnectCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

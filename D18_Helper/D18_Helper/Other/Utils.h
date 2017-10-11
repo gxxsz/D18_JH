@@ -54,6 +54,8 @@
  **/
 + (NSString *)intToHex:(uint16_t)number;
 
++ (NSMutableArray *)getProgramArray;
 
++ (void)setProgramArray:(NSArray *)programs;
 
 @end
