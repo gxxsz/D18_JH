@@ -12,6 +12,7 @@
 
 @property (nonatomic , assign) CGFloat sliderHeight;
 
-- (instancetype)initWithFrame:(CGRect)frame showValue:(BOOL)show valueIsAbove:(BOOL)isAbove
+- (instancetype)initWithFrame:(CGRect)frame showValue:(BOOL)show valueIsAbove:(BOOL)isAbove;
+
 
 @end
