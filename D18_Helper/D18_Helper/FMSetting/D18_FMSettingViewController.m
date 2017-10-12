@@ -25,12 +25,32 @@
     D18_NavigationBar *barView = [[D18_NavigationBar alloc] initWithTitle:@"FM" isShowBackButton:YES];
     barView.barViewDelegate = self;
     [self.view addSubview:barView];
+    
+    [self setUpFMBackgroundView];
+    [self setUpLeftFMView];
+    [self setUpRightFMView];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)setUpFMBackgroundView
+{
+    
+}
+
+- (void)setUpLeftFMView
+{
+    
+}
+
+- (void)setUpRightFMView
+{
+    
 }
 
 - (void)backBtnClick

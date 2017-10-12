@@ -52,11 +52,8 @@
 
 - (void)transToRootController
 {
-//    D18_RootViewController *rootController = [[D18_RootViewController alloc] init];
-    
-    D18_HomePageViewController *homePageCtl = [[D18_HomePageViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homePageCtl];
-    nav.navigationBar.hidden = YES;
+    D18_RootViewController *rootController = [[D18_RootViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:rootController];
     self.window.rootViewController = nav;
 }
 

@@ -15,6 +15,7 @@
 		4712BB3B1F849A3500B68178 /* D18_HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB3A1F849A3500B68178 /* D18_HomePageViewController.m */; };
 		4712BB3E1F849A4A00B68178 /* D18_FMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB3D1F849A4A00B68178 /* D18_FMSettingViewController.m */; };
 		4712BB621F865E6500B68178 /* GlobalDefinition.h in Sources */ = {isa = PBXBuildFile; fileRef = 4712BB591F865D7700B68178 /* GlobalDefinition.h */; };
+		4759FC8C1F8F816300190054 /* D18_SliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4759FC8B1F8F816300190054 /* D18_SliderView.m */; };
 		478633B31F70F5F300AB736B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 478633B21F70F5F300AB736B /* main.m */; };
 		478633B61F70F5F300AB736B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 478633B51F70F5F300AB736B /* AppDelegate.m */; };
 		478633BC1F70F5F300AB736B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478633BA1F70F5F300AB736B /* Main.storyboard */; };
@@ -82,6 +83,8 @@
 		4712BB5F1F865D7700B68178 /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		4712BB601F865D7700B68178 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		4712BB611F865D7700B68178 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		4759FC8A1F8F816300190054 /* D18_SliderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D18_SliderView.h; sourceTree = "<group>"; };
+		4759FC8B1F8F816300190054 /* D18_SliderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D18_SliderView.m; sourceTree = "<group>"; };
 		478633AE1F70F5F300AB736B /* D18_Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D18_Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		478633B21F70F5F300AB736B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		478633B41F70F5F300AB736B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		4712BB271F8498EB00B68178 /* FMSetting */ = {
 			isa = PBXGroup;
 			children = (
+				4759FC891F8F813700190054 /* views */,
 				4712BB3C1F849A4A00B68178 /* D18_FMSettingViewController.h */,
 				4712BB3D1F849A4A00B68178 /* D18_FMSettingViewController.m */,
 			);
@@ -223,6 +227,15 @@
 				4712BB611F865D7700B68178 /* Utils.m */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		4759FC891F8F813700190054 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				4759FC8A1F8F816300190054 /* D18_SliderView.h */,
+				4759FC8B1F8F816300190054 /* D18_SliderView.m */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		478633A51F70F5F300AB736B = {
@@ -387,6 +400,7 @@
 				47FC517B1F8E2152008C5DB9 /* D18_ProgramCell.m in Sources */,
 				47FC51801F8E3937008C5DB9 /* D18_ProgramModel.m in Sources */,
 				4712BB621F865E6500B68178 /* GlobalDefinition.h in Sources */,
+				4759FC8C1F8F816300190054 /* D18_SliderView.m in Sources */,
 				47FF38F71F8CE42B000B531E /* Utils.m in Sources */,
 				4712BB3B1F849A3500B68178 /* D18_HomePageViewController.m in Sources */,
 				478633B61F70F5F300AB736B /* AppDelegate.m in Sources */,

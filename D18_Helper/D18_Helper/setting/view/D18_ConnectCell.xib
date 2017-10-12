@@ -48,20 +48,30 @@
                         </state>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1lt-vL-Llv">
-                        <rect key="frame" x="0.0" y="44.5" width="351" height="0.5"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <rect key="frame" x="0.0" y="0.0" width="351" height="0.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="0.5" id="9Mt-6C-Ka8"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eti-hx-hC9">
+                        <rect key="frame" x="0.0" y="44" width="351" height="0.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="EWO-Cj-In1"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="eti-hx-hC9" secondAttribute="bottom" id="1xu-2g-Lbz"/>
+                    <constraint firstItem="1lt-vL-Llv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3Rh-YZ-xJL"/>
                     <constraint firstAttribute="trailing" secondItem="lgo-W9-21Y" secondAttribute="trailing" constant="100" id="GU0-50-aa8"/>
                     <constraint firstItem="lgo-W9-21Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Hl5-A7-MmN"/>
                     <constraint firstAttribute="trailing" secondItem="g70-m5-1zm" secondAttribute="trailing" constant="100" id="N1H-gf-3fJ"/>
                     <constraint firstItem="g70-m5-1zm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="TUG-hk-7Co"/>
-                    <constraint firstAttribute="bottom" secondItem="1lt-vL-Llv" secondAttribute="bottom" id="Wcy-eM-M1G"/>
                     <constraint firstItem="lgo-W9-21Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="YgO-6g-d6H"/>
+                    <constraint firstItem="eti-hx-hC9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aEQ-bn-pmA"/>
+                    <constraint firstAttribute="trailing" secondItem="eti-hx-hC9" secondAttribute="trailing" id="fko-l3-VOJ"/>
                     <constraint firstAttribute="trailing" secondItem="1lt-vL-Llv" secondAttribute="trailing" id="nAu-kx-doK"/>
                     <constraint firstItem="DHT-NE-Qmv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pMd-XK-lQr"/>
                     <constraint firstItem="g70-m5-1zm" firstAttribute="top" secondItem="lgo-W9-21Y" secondAttribute="bottom" id="qtw-z0-3u1"/>

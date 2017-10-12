@@ -21,7 +21,7 @@
     _statusBtn.layer.borderWidth = 1;
     _statusBtn.layer.borderColor = [Utils stringTOColor:@"#5cb8c4"].CGColor;
     self.backgroundColor = [Utils stringTOColor:@"#141414"];
-    
+    self.separatorInset = UIEdgeInsetsZero;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

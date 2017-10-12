@@ -13,6 +13,14 @@
 
 @interface D18_RootViewController ()
 
+@property (nonatomic , strong) D18_SettingViewController *settingCtl;
+
+@property (nonatomic , strong) D18_HomePageViewController *homePageCtl;
+
+@property (nonatomic , strong) D18_FMSettingViewController *fmSettingCtl;
+
+@property (nonatomic , strong) UIViewController *currentCtl;
+
 @end
 
 @implementation D18_RootViewController
@@ -20,10 +28,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
-    D18_HomePageViewController *homePageCtl = [[D18_HomePageViewController alloc] init];
-    [self addChildViewController:homePageCtl];
-    [self.view addSubview:homePageCtl.view];
+    self.view.backgroundColor = [UIColor clearColor];
+    _homePageCtl = [[D18_HomePageViewController alloc] init];
+    self.navigationController.navigationBar.hidden = YES;
+    [self addChildViewController:_homePageCtl];
+    [self.view addSubview:_homePageCtl.view];
+    _currentCtl = _homePageCtl;
+    
+    _settingCtl = [[D18_SettingViewController alloc] init];
+    [self addChildViewController:_settingCtl];
+    
+    _fmSettingCtl = [[D18_FMSettingViewController alloc] init];
+    [self addChildViewController:_fmSettingCtl];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
